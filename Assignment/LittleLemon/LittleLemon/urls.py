@@ -16,10 +16,12 @@ Including another URLconf
 #update URLConf by including URL patterns of restaurant app
 from django.contrib import admin
 from django.urls import path, include
+from djoser.urls import authtoken
 
 
 urlpatterns = [
    path('admin/', admin.site.urls),
    path('restaurant/', include('restaurant.urls')),
-   path('restaurant/menu/',include('restaurant.urls')),
+   path('auth/', include('djoser.urls')),
+   path('auth/', include('djoser.urls.authtoken')),
 ]
